@@ -1,0 +1,17 @@
+---
+auth: "https://site.com/api/v1/ln_auth?tag=login&k1=hex(32 bytes of random data)&action=login"
+account_status:
+  "https://site.com/api/v1/accounts/:ln_auth_key"
+kyc:
+  # Some LN apps may choose to not implement the KYC spec and just send the user over
+  # to an HTML page, which they can fill up
+  - version: "html"
+    url: "https://site.com/kyc"
+  - version: "1.0"
+    url: "https://site.com/api/v1/profiles"
+quotes:
+  - version: "1.0"
+    url: "https://site.com/api/v1/quotes"
+assets:
+  - version: "1.0"
+    url: "https://site.com/api/v1/assets"
