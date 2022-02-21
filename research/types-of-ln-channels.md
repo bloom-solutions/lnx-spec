@@ -1,6 +1,10 @@
 - Normal
   - sats only
   - create your own channels, manage liquidity
+- Semi-custodial
+  - Custodial at the beginning
+  - Moved to self-custodial later
+  - https://blog.muun.com/turbo-channels/
 - Hosted
   - Someone manages channels for you or you share channels with others
   - Shared liquidity
@@ -16,10 +20,11 @@
   - Your own node, whether on phone or device at home
   - You manage your channels, your liquidity
 - Hedged
-  - Can only be applied to hosted channels
+  - Can only be applied to hosted channels (https://devpost.com/software/standard-sats)
   - Host essentially buys the fiat currency when you receive bitcoin, sells the fiat currency when you sent bitcoin
 - Stabilized
   - Only makes sense to do so in self-custodial
   - Sats in the channel:
     - increases when the asset value it represents goes down in value vs bitcoin
     - decreases when the asset value it represents goes up in value vs bitcoin
+  - https://hrf.org/strike-hrf-bounty
