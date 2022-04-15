@@ -64,7 +64,7 @@ sequenceDiagram
 
 As mentioned above, LNX is just a bunch of modules / services that allow it to buy and sell some asset against Bitcoin. 
 
-Here you'll find an example of the Customer (not shown), through Core, requesting for a Lightning Invoice in $ terms. Everything LNX API and b
+Here you'll find an example of the Customer (not shown), through Core, requesting for a Lightning Invoice in $ terms. LNX needs rates to make the right quote, because fundamentally LNX is an exchange, even if it uses other exchanges downstream to fulfill orders.
 
 ```mermaid
 sequenceDiagram
@@ -78,3 +78,5 @@ sequenceDiagram
     Rates-->>LNX: Return quote
     LNX-->>Core: Return invoice
 ```
+
+These "Rate sources" could be configured to talk to Core again if the Core app already has that information.
