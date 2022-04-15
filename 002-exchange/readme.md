@@ -64,10 +64,17 @@ sequenceDiagram
 
 As mentioned above, LNX is just a bunch of modules / services that allow it to buy and sell some asset against Bitcoin. 
 
+Here you'll find an example of the Customer (not shown), through Core, requesting for a Lightning Invoice in $ terms. Everything LNX API and b
+
 ```mermaid
 sequenceDiagram
     Participant Core
-    Participant LNX API
+    Participant LNX
     Participant Rates
     Participant Rate sources
+    Core->>LNX: Requests for LN invoice for 10$
+    LNX->>Rates: Get quote: amunt bitcoin to sell for $10
+    Rates->Rate sources: Fetch new rate data
+    Rates-->>LNX: Return quote
+    LNX-->>Core: Return invoice
 ```
