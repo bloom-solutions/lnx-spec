@@ -1,4 +1,14 @@
-# Overview
+This document describes a business'/exchange's interactions with the LNX server. The two main functions are cash-in and cash-out.
+
+## LNX's responsibilities
+
+The LNX server is in charge of:
+
+- knowing exchange rates
+- setting timeouts for generated invoices to minimize volatility risk
+- generating invoices given a currency and amount
+- making Bitcoin/LN payments given a currency and amount
+- detecting invoices paid (in and out) and notifying given webhook url
 
 ## Cash-in
 
@@ -47,12 +57,3 @@ sequenceDiagram
         Core-->>Customer: Not enough funds
     end
 ```
-
-# Fetching backend info
-
-In order for the LN app to know what endpoints to hit, they go to `/.well-known/lnx.yml`. This file contains all necessary information to interact with the server, such as:
-
-- authorization
-- kyc, if needed
-- where to create quotes
-- get asset list and balances
