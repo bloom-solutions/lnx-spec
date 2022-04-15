@@ -59,3 +59,15 @@ sequenceDiagram
         Core-->>Customer: Not enough funds
     end
 ```
+
+# LNX Internals
+
+As mentioned above, LNX is just a bunch of modules / services that allow it to buy and sell some asset against Bitcoin. 
+
+```mermaid
+sequenceDiagram
+    Participant Core
+    Participant LNX API
+    Participant Rates
+    Participant Rate sources
+```
