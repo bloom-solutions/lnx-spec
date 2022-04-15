@@ -10,6 +10,8 @@ The LNX server is in charge of:
 - making Bitcoin/LN payments given a currency and amount
 - detecting invoices paid (in and out) and notifying given webhook url
 
+Below are diagrams for cashing in and out from an institution's point of view. LNX itself is composed of multiple software modules. We will dive into that detail in a later section.
+
 ## Cash-in
 
 ```mermaid
