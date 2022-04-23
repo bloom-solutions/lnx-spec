@@ -39,7 +39,9 @@ sequenceDiagram
     Customer->>Core: Provides LN invoice
     Core->>LNX: Gets rate
     LNX-->>Core: Returns rate
+    Core-->>Customer: Show fiat amount to be deducted
     alt Enough funds
+        Customer->>Core: Confirm withdrawal
         Core->>LNX: Pay invoice
         alt Success
             LNX-->>Core: Webhook
