@@ -25,7 +25,8 @@ sequenceDiagram
     Core-->>Customer: Returns invoice
     Customer->>LNX: Pays invoice
     LNX-->>Core: Invoice paid
-    Core-->>Customer: $10 payment successful
+    Core-->>Core: Add $10 to Customer account
+    Core-->>Customer: $10 deposit successful
 ```
 
 ## Cash-out
