@@ -19,21 +19,13 @@ sequenceDiagram
     Participant Customer
     Participant Core
     Participant LNX
-    Customer->>Core: Provides LN invoice
-    Core->>LNX: Gets rate
-    LNX-->>Core: Returns rate
-    alt Enough funds
-        Core->>LNX: Pay invoice
-        alt Success
-            LNX-->>Core: Webhook
-            Core-->>Customer: Money sent
-        else Failed
-            LNX-->>Core: Webhook
-            Core-->>Customer: Failed
-        end
-    else Lacks funds
-        Core-->>Customer: Not enough funds
-    end
+    Customer->>Core: Requests to top up $10
+    Core-->>LNX: Requests to top up $10
+    LNX-->>Core: Returns invoice
+    Core-->>Customer: Returns invoice
+    Customer->>LNX: Pays invoice
+    LNX-->>Core: Invoice paid
+    Core-->>Customer: $10 payment successful
 ```
 
 ## Cash-out
