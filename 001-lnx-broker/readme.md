@@ -40,6 +40,7 @@ sequenceDiagram
     Core->>LNX: Create quote
     Note right of Core: Core supplies LN invoice and the base currency (from currency)
     LNX-->>Core: Returns quote
+    Note right of Core: LNX returns how much in the base currency is needed to pay the LN invoice
     Core-->>Customer: Show fiat amount to be deducted
     alt Enough funds
         Customer->>Core: Confirm withdrawal
