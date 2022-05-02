@@ -38,16 +38,6 @@ sequenceDiagram
     Bank-->>Customer: Payment sent!
 ```
 
-## Customer pays for goods and services
-
-```mermaid
-sequenceDiagram
-    Customer->>Shop: I want to buy this honey badger action figure
-    Shop-->>Customer: That'll cost you 0.000015 Bitcoin ($5)
-    Customer->>Shop: Here is 0.000015 Bitcoin
-    Shop->>Customer: Thanks!
-```
-
 # Other Standards
 
 It may have some overlap with [tbDEX](https://github.com/TBD54566975/tbdex-whitepaper), but its objective is to make it easier for these exchanges to use Bitcoin + LN as a medium of exchange between currencies, and for financial institutions to talk to these exchanges. Though [tbDEX specs](https://github.com/TBD54566975/tbdex-protocol/blob/main/lib/README.md) are new and subject to sudden change, the goal is to eventually be compatible with tbDEX's messaging format. Until tbDEX's v1 specs are released, LNX will implement its own messaging format.
